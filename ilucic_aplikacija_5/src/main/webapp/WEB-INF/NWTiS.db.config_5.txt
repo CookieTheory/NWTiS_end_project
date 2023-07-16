@@ -1,0 +1,8 @@
+adresa.aplikacija_2=http://200.20.0.4:8080/ilucic_aplikacija_2/api
+autor.ime=Ivan
+autor.prezime=Lucic
+autor.predmet=NWTiS
+aplikacija.godina=2023.
+aplikacija.verzija=1.0.0
+aplikacija_1.adresa=200.20.0.1
+aplikacija_1.vrata=8000
