@@ -1,0 +1,2 @@
+brojCekaca=5
+posluziteljGlavniVrata=8000

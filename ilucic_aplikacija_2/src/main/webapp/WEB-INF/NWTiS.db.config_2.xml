@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTIS projektna konfiguracija</comment>
+<entry key="aplikacija_1.adresa">200.20.0.1</entry>
+<entry key="aplikacija_1.vrata">8000</entry>
+<entry key="OpenSkyNetwork.korisnik">i*****</entry>
+<entry key="OpenSkyNetwork.lozinka">nwtis-5*****</entry>
+</properties>

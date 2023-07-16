@@ -1,0 +1,10 @@
+aerodromi.sakupljanje=LDZA LOWW EDDF EDDM
+ciklus.trajanje=300
+preuzimanje.od=01.01.2023
+preuzimanje.do=01.05.2023
+OpenSkyNetwork.korisnik=i*****
+OpenSkyNetwork.lozinka=nwtis-5*****
+OpenWeatherMap.apikey=8bf9db23fb589dddf24f741ffd0*****
+LocationIQ.apikey=pk.552fc8062fde5ab77c3c8cbb655*****
+aplikacija_1.adresa=200.20.0.1
+aplikacija_1.vrata=8000

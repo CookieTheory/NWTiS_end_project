@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "94e8f6fa-d1fe-4e47-a693-de3401c989cd",
+		"name": "Aplikacija_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28134893"
+	},
+	"item": [
+		{
+			"name": "Aplikacija_1",
+			"item": [
+				{
+					"name": "nadzor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/nadzor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"nadzor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{komanda}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/nadzor/INIT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"nadzor",
+								"INIT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INFO {DA|NE}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/nadzor/INFO/NE",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"nadzor",
+								"INFO",
+								"NE"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Aerodromi",
+			"item": [
+				{
+					"name": "/aerodromi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aerodromi?odBroja=1&broj=5&traziNaziv=Hayden",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aerodromi"
+							],
+							"query": [
+								{
+									"key": "odBroja",
+									"value": "1"
+								},
+								{
+									"key": "broj",
+									"value": "5"
+								},
+								{
+									"key": "traziNaziv",
+									"value": "Hayden"
+								},
+								{
+									"key": "traziDrzavu",
+									"value": "US",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aerodromi/icao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aerodromi/LDZA",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aerodromi",
+								"LDZA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aerodromi/icaoOd/icaoDo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aerodromi/LDZA/LOWW",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aerodromi",
+								"LDZA",
+								"LOWW"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aerodromi/icao/udaljenosti",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aerodromi/LDZA/udaljenosti",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aerodromi",
+								"LDZA",
+								"udaljenosti"
+							],
+							"query": [
+								{
+									"key": "odBroja",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "broj",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aerodromi/icaoOd/izracunaj/icaoDo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aerodromi/LDZA/izracunaj/LOWW",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aerodromi",
+								"LDZA",
+								"izracunaj",
+								"LOWW"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aerodromi/icaoOd/udaljenost1/icaoDo",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "/aerodromi/icaoOd/udaljenost2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/aerodromi/LDZA/udaljenost2?drzava=AT&km=250",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"aerodromi",
+								"LDZA",
+								"udaljenost2"
+							],
+							"query": [
+								{
+									"key": "drzava",
+									"value": "AT"
+								},
+								{
+									"key": "km",
+									"value": "250"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dnevnik",
+			"item": [
+				{
+					"name": "/dnevnik",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "/dnevnik",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"vrsta\": \"JAX-RS\",\n        \"aplikacija\": \"AP2\",\n        \"requestUrl\": \"/ilucic_aplikacija_2/api/aerodromi\",\n        \"vrijeme\": \"2023-06-22 18:00:21.0\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/dnevnik",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"dnevnik"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://200.20.0.4:8080/ilucic_aplikacija_2/api",
+			"type": "string"
+		}
+	]
+}
