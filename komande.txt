@@ -2,28 +2,33 @@
 cd ilucic/ilucic-projekt/
 
 echo "STOPPING DOCKER"
-docker stop nwtis_bp
+sudo docker stop nwtis_bp
 echo "DELETING DOCKER"
-docker rm nwtis_bp
+sudo docker rm nwtis_bp
 echo "PREPARING DOCKER"
 sudo ./scripts/pripremiSliku.sh
 echo "STARTING DOCKER"
 sudo ./scripts/pokreniSliku.sh
 
+### BAZA SERVER
+
+cd /opt/hsqldb-2.7.3/hsqldb/data
+sudo java -classpath ../lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:nwtis_bp --dbname.0 nwtis_bp --port 9001
+
 ### APLIKACIJA 1 POKRETAČ POSLUŽITELJA
-cd ilucic/ilucic-projekt/ilucic_aplikacija_1
+cd ilucic_aplikacija_1
 java -cp target/ilucic_aplikacija_1-1.0.0.jar org.foi.nwtis.ilucic.aplikacija_1.PokretacPosluzitelja NWTiS_ilucic_1.txt
 
 ### APLIKACIJA 1 GLAVNI KLIJENT
-cd ilucic/ilucic-projekt/ilucic_aplikacija_1
+cd ilucic_aplikacija_1
 java -cp target/ilucic_aplikacija_1-1.0.0.jar org.foi.nwtis.ilucic.aplikacija_1.GlavniKlijent NWTiS_ilucic_1.txt
 
 UDALJENOST 53.32055555555556 -1.7297222222222221 53.31861111111111 -1.6997222222222223 ~2.00
 UDALJENOST 35.6544 139.74477 21.4225 39.8261 ~9480.66
 
 ### DOCKER/PAYARA MICRO
-cd ilucic/ilucic-projekt/ilucic_aplikacija_2/
-./scripts/obrisiPripremiPokreni.sh
+cd ilucic_aplikacija_2/
+./obrisiPripremiPokreni.sh
 
 ### SERVER - PAYARA FULL 6.2023.4
 
@@ -38,5 +43,12 @@ tail -f /opt/payara-full-6.2023.4/glassfish/domains/domain1/logs/server.log
 
 export JAVA_HOME=/usr/lib/jvm/jdk-17.0.2
 export PATH=/usr/lib/jvm/jdk-17.0.2/bin:$PATH
-cd /opt/payara-full-6.2023.4/glassfish/bin
+cd /opt/payara-full-6.2024.5/glassfish/bin
 ./startserv
+
+
+### PROJECT HELP
+
+sudo systemctl restart docker
+sudo systemctl status docker.socket
+mvn install:install-file -Dfile=nwtis_rest_lib-3.0.0.jar -DgroupId=org.foi.nwtis  -DartifactId=nwtis_rest_lib -Dversion=3.0.0 -Dpackaging=jar

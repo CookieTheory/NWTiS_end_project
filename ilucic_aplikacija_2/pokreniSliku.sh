@@ -1,7 +1,7 @@
 #!/bin/bash
 NETWORK=ilucic_mreza_1
 
-docker run -it -d \
+sudo docker run -it -d \
   -p 8070:8080 \
   --network=$NETWORK \
   --ip 200.20.0.4 \
